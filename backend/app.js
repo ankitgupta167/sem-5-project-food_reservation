@@ -19,6 +19,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1/reservation", reservationRouter);
 
+// the below code is added by me for backend deployment.
+app.get("/",(req, res,next)=>{return res.status(200).json({
+    success: true,
+    message : "hello world ka hal cal ba"
+
+})})
+
 dbConnection();
 
 app.use(errorMiddleware);
