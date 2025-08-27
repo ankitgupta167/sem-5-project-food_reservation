@@ -7,16 +7,16 @@ const Footer = () => {
         <div className="banner">
           <div className="left">ANKIT</div>
           <div className="right">
-            <p>A5 Om sai ram mandir, Mumbai</p>
+            <p>Balalma apt, Quees park, Mira-road, Thane</p>
             <p>Open: 05:00 PM - 12:00 AM</p>
           </div>
         </div>
         <div className="banner">
           <div className="left">
-            <p>Developed By ANKIT&AMAR</p>
+            <p>Developed By ANKIT</p>
           </div>
           <div className="right">
-            <p>All Rights Reserved By ANKIT&AMAR.</p>
+            <p>All Rights Reserved By ANKIT.</p>
           </div>
         </div>
       </div>
