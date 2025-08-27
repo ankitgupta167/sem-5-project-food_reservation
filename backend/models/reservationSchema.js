@@ -30,9 +30,17 @@ const reservationSchema = new mongoose.Schema({
   phone: {
     type: String,
     required: true,
-    minLength: [10, "Phone number must contain 11 Digits."],
-    maxLength: [11, "Phone number must contain 11 Digits."],
+    minLength: [10, "Phone number must contain 10 Digits."],
+    maxLength: [10, "Phone number must contain 10 Digits."],
   },
+// i am adding here address 
+address: {
+    type: String,
+    required: true,
+    minLength: [3, "First name must be of at least 3 Characters."],
+    maxLength: [30, "First name cannot exceed 30 Characters."],
+  },
+
 });
 
 export const Reservation = mongoose.model("Reservation", reservationSchema);

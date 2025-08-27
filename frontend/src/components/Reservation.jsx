@@ -11,7 +11,8 @@ const Reservation = () => {
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [phone, setPhone] = useState(0);
+  const [phone, setPhone] = useState("");
+   const [address,setAddress]= useState("");
   const navigate = useNavigate();
 
   const handleReservation = async (e) => {
@@ -19,7 +20,8 @@ const Reservation = () => {
     try {
       const { data } = await axios.post(
         "https://sem-5-project-food-reservation-1.onrender.com/api/v1/reservation/send",
-        { firstName, lastName, email, phone, date, time },
+        // "http://localhost:4000/api/v1/reservation/send",
+        { firstName, lastName, email, phone, date, time ,address},
         {
           headers: {
             "Content-Type": "application/json",
@@ -30,10 +32,11 @@ const Reservation = () => {
       toast.success(data.message);
       setFirstName("");
       setLastName("");
-      setPhone(0);
+      setPhone("");
       setEmail("");
       setTime("");
       setDate("");
+      setAddress("");
       navigate("/success");
     } catch (error) {
       toast.error(error.response.data.message);
@@ -93,7 +96,19 @@ const Reservation = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
-              </div>
+                </div>
+                {/* i am adding here address */}
+                <div>
+                  <input
+                  type="text"
+                  placeholder="address"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+                </div>
+
+
+              
               <button type="submit" onClick={handleReservation}>
                 RESERVE NOW{" "}
                 <span>
