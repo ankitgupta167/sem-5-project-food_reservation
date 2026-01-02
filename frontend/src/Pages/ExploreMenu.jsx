@@ -103,7 +103,6 @@ const addToCart = (item) => {
         .filter(i => i.qty > 0)
     );
   };
-
   // ❌ Remove item
   const removeItem = (id) => {
     setCart(prev => prev.filter(i => i.id !== id));
@@ -141,10 +140,17 @@ const addToCart = (item) => {
             <p>
               {item.name} × {item.qty} = ₹{item.price * item.qty}
             </p>
-
+            <div className="buttons">
+          
             <button onClick={() => decreaseQty(item.id)}>-</button>
+            
+          
             <button onClick={() => increaseQty(item.id)}>+</button>
+            
+          
             <button onClick={() => removeItem(item.id)}>Remove</button>
+            
+            </div>
           </div>
         ))}
 {cart.length > 0 && (

@@ -63,14 +63,20 @@
   display: flex;
    justify-content: center;
   align-items: center; /* for verticaly */
-  background-color: #b97eed;
+  background-color: lab(94.81% 3.78 -4.11);
   }
 .menu-info button:hover {
   background-color: #e63939;
 }
 .cart_icon{
   background-color: yellow;
-  border: 2px 3px solid red;
-  color: gray
-  ;
+  color: rgb(152, 95, 95); 
+  width: 500px;
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  height: 30px;
 }
